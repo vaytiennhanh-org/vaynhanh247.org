@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vaynhanh247.org/sitemap.xml
