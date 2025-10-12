@@ -695,29 +695,89 @@
   }</script>
 
   <!-- JSON-LD: FinancialService + WebSite + Organization -->
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": "Vay Nhanh 24/7",
-    "url": "https://vaynhanh247.org",
-    "areaServed": "VN",
-    "openingHours": "Mo-Su 00:00-23:59",
-    "sameAs": [
-      "https://medium.com/@vaynhanh247",
-      "https://www.linkedin.com/company/vaynhanh247",
-      "https://vaynhanh247-news.blogspot.com"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vaynhanh247.org/#organization",
+        "name": "Vay Nhanh 24/7",
+        "url": "https://vaynhanh247.org",
+        "logo": "https://vaynhanh247.org/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/vaynhanh247",
+          "https://www.linkedin.com/company/vaynhanh247",
+          "https://medium.com/@vaynhanh247",
+          "https://vaynhanh247-news.blogspot.com",
+          "https://github.com/vaytiennhanh-org"
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Vaytiennhanh.org",
+          "url": "https://vaytiennhanh.org"
+        }
+      },
+      {
+        "@type": "FinancialService",
+        "@id": "https://vaynhanh247.org/#financialservice",
+        "name": "Vay Nhanh 24/7",
+        "url": "https://vaynhanh247.org",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Vietnam"
+        },
+        "description": "Nền tảng so sánh và đăng ký vay tiền online nhanh chóng, hỗ trợ tư vấn tài chính và đối tác cho vay uy tín toàn quốc.",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Danh mục dịch vụ vay nhanh",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Vay tiền online nhanh",
+                "description": "Giải pháp vay tiền trực tuyến với thời gian xét duyệt nhanh và linh hoạt."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "So sánh khoản vay",
+                "description": "Công cụ so sánh các gói vay từ nhiều đối tác tài chính uy tín tại Việt Nam."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tư vấn tài chính cá nhân",
+                "description": "Hỗ trợ người dùng lựa chọn gói vay và tối ưu chi phí lãi suất."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vaynhanh247.org/#website",
+        "url": "https://vaynhanh247.org",
+        "name": "Vay Nhanh 24/7",
+        "inLanguage": "vi",
+        "publisher": {
+          "@id": "https://vaynhanh247.org/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://vaynhanh247.org/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
     ]
-  }</script>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"WebSite",
-    "url":"https://vaynhanh247.org/","name":"Vay Nhanh 24/7",
-    "potentialAction":{"@type":"SearchAction","target":"https://vaynhanh247.org/?q={search_term_string}","query-input":"required name=search_term_string"}
-  }</script>
-  <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Organization",
-    "name":"Vay Nhanh 24/7","url":"https://vaynhanh247.org/","logo":"https://vaynhanh247.org/logo.png",
-    "sameAs":["https://www.facebook.com/vaynhanh247","https://www.linkedin.com/company/vaynhanh247"]
-  }</script>
+  }
+  </script>
 
   <!-- Simple validation for the form -->
   <script>
